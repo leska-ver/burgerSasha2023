@@ -1,0 +1,531 @@
+:root {
+  --color-white: #fff;
+  --color-mineShaft: #333;/*Макета цвет black*/
+  --color-purpleHeart: #7033ac;/*primary_shade*/
+  --color-mediumPurple: #a65cf0;/*primary*/
+  --color-mauve: #c998fb;/*primary_light*/
+  --color-blueChalk: #ebd1ff;/*pink_violet*/
+  --color-magnolia: #f8efff;/*pink_light*/
+  --color-rust: #bb370e;/*secondary_shade*/
+  --color-crusta: #ff862f;/*secondary*/
+  --color-koromiko: #ffbd59;/*secondary_light*/
+  --color-milkPunch: #fff5d1;/*gold*/
+  --color-straw: #d5b986;/*bone*/
+  --color-wildSand: #f6f6f6;/*grey_light*/
+  --color-dustyGray: #999;/*grey_shade*/
+  --color-doveGray: #666;/*gray*/
+  --color-gallery: #eaeaea;/*green_input*/
+  --color-sulu: #b8ec64;/*line-color*/
+  --color-snowFlurry: #daffd1;
+  --color-linkWater: #f2f2fc;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /*Для .wrapper*/
+}
+
+*,
+*::before,
+*::after {
+   -webkit-box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'OpenSans', sans-serif;
+  /*Общий шрифт 400*/
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--color-mineShaft);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*h1,
+h2,
+h3,
+p,
+a {
+  перенос слов
+  word-wrap: break-word;
+}*/
+
+h1, h2, h3, h4, h5, h6 {
+  /*Обязательно убираем маргины у заголовок(Саша-Скиллбохс) */
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* отключает поведение изменения размера для textarea(Блок сообщения) */
+textarea {
+  resize: none;
+}
+
+button {
+  /*Лупа*/
+  background-color: inherit;
+  border: none;
+}
+
+.btn {
+  position: relative;
+  padding: 19px 35px;
+  border: 2px solid var(--color-mediumPurple);
+  border-radius: 10px;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-mediumPurple);
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: bacground-color .4s ease-in-out;
+  -ms-transition: bacground-color .4s ease-in-out;
+  -moz-transition: bacground-color .4s ease-in-out;
+  -o-transition: bacground-color .4s ease-in-out;
+  transition: bacground-color .4s ease-in-out;
+}  
+
+  .btn:focus {
+    outline: none;
+    color: var(--color-white);
+    background-color: var(--color-mauve);
+  }
+
+  .btn:hover {
+    color: var(--color-white);
+    background-color: var(--color-mediumPurple);
+  }
+
+  .btn:active {
+    border: 2px solid var(--color-purpleHeart);
+    color: var(--color-white);
+    background-color: var(--color-purpleHeart);
+  }
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.container {
+  /*1380px = 1280px + 50px + 50px не менять!*/
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.h2 {
+  font-size: 48px;
+}
+
+.h3 {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+.desrc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--color-mineShaft);
+}
+
+
+/***Шапка header-1920px***/
+.header {
+  padding-bottom: 13px;
+  max-height: max-content;
+} 
+
+.burger {
+  position: relative;
+  display: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.header__block-burger {
+  margin: -5px -5px -5px 20px;
+}
+
+.header__nav { 
+  /*Нужен для разворота burger*/
+  z-index: 2;
+}
+
+.header__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__item:not(:last-child) {
+  margin-right: 71px;
+}
+
+.header__link {
+  padding: 4px 10px;
+  font-size: 16px;
+  line-height: 21px;
+  outline: none;
+  -webkit-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  -ms-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  -moz-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  -o-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  transition: color .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+.header__link:focus {
+  color: var(--color-mediumPurple);
+}
+
+.header__link:hover {
+  color: var(--color-mineShaft);
+  background-color: var(--color-blueChalk);
+}
+
+.header__link:active {
+  color: var(--color-purpleHeart);
+}
+
+.header__list2 {
+  display: none;
+}
+/*** // Шапка-header-1920***/
+
+
+@media (max-width: 1385px) {/*1385px*/
+  .container {
+    padding: 0 36px;
+  }
+  
+  /***Шапка-header-1385***/  
+  .header__list {
+    width: 101.2%;
+    justify-content: space-between;
+  }
+
+  .header__item:not(:last-child) {
+    margin-right: 22px;
+  }
+
+  .header__block-burger {
+    margin-right: -10px;
+  }  
+  /*** // Шапка header-1385px***/
+}
+
+
+@media (max-width: 999px) {/*999px*/
+  .container {
+    padding: 0 71px;
+  }
+  
+  /*** Шапка header-999px***/  
+  .header__item-about:not(:last-child) {
+    margin-right: 2.4%;
+  }
+
+  .header__block-burger {
+    margin-top: -6px;
+    margin-left: -13px;
+    order: -1;
+  }
+
+  .burger {
+    display: block;
+    background-color: transparent;
+    outline-offset: 8px;
+    z-index: 17;
+    -webkit-transition: background-color .4s ease-in-out;
+    -ms-transition: background-color .4s ease-in-out;
+    -moz-transition: background-color .4s ease-in-out;
+    -o-transition: background-color .4s ease-in-out;
+    transition: background-color .4s ease-in-out;
+  }
+
+  .burger:focus {
+    outline: none;
+  }
+
+  .burger:hover {
+    background-color: var(--color-blueChalk);
+  }
+
+  .burger:active {
+    background-color: transparent;
+  }
+
+  .burger span {
+    display: block;
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: var(--color-mediumPurple);
+    border-radius: 9px;
+    opacity: 1;
+    margin-top: 8px;
+    left: 8px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: background-color .4s ease-in-out;
+    -moz-transition: background-color .4s ease-in-out;
+    -o-transition: background-color .4s ease-in-out;
+    transition: background-color .4s ease-in-out;
+  }
+
+  /*Палочки*/
+  .burger span:nth-child(1) {
+    top: 0px;
+  }
+
+  .burger span:nth-child(2) {
+    top: 11px;
+  }
+
+  .burger span:nth-child(3) {
+    top: 21.5px;
+  }
+
+  .burger:focus span,
+  .burger:focus span:nth-child(2),
+  .burger:focus span:nth-child(3),
+  .burger:hover span,
+  .burger:hover span:nth-child(2),
+  .burger:hover span:nth-child(3),
+  .burger:active span,
+  .burger:active span:nth-child(2),
+  .burger:active span:nth-child(3) {
+    background-color: var(--color-purpleHeart);
+  }
+
+  /*Крест*/
+  .burger.open span:nth-child(1) {
+    top: 13px;
+    left: -4px;
+    width: 38px;
+    /*38px длина палочки*/
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .burger.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  .burger.open span:nth-child(3) {
+    top: 13px;
+    left: -5px;
+    width: 38px;
+    /*38px длина палочки*/
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .header__block-menu {
+    position: absolute;
+/*     top: 138px; В кодепене не нужен*/
+    display: grid;
+    grid-template-columns: 67% 163px;
+    grid-gap: 17px;
+    margin-left: -67px;
+    padding-top: 54px;
+    width: 101%;
+    background-color: var(--color-white);
+    z-index: 16;
+  }
+
+  /*JS для burger-а*/
+  .menu {
+    transform: translateX(-300%);
+    /*Скрывает меню*/
+  }
+
+  .menu.is-active {
+    /*is-active js*/
+    transform: none;
+  }
+
+  .burger.open span:nth-child(1),
+  .burger.open span:nth-child(3) {
+    top: 11px;
+    left: 7px;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-dustyGray);
+  }
+
+  .burger.open:focus span:nth-child(1),
+  .burger.open:focus span:nth-child(3) {
+    background-color: var(--color-mediumPurple);
+  }
+
+  .burger.open:hover span:nth-child(1),
+  .burger.open:hover span:nth-child(3) {
+    background-color: var(--color-purpleHeart);
+  }
+
+  .burger.open span:nth-child(1) {
+    -webkit-transform: rotate(-315deg);
+    -moz-transform: rotate(-315deg);
+    -o-transform: rotate(-315deg);
+    transform: rotate(-315deg);
+  }
+
+  .burger.open span:nth-child(3) {
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    transform: rotate(315deg);
+  }
+
+  .header__nav {
+    margin-left: 65px;
+  }
+
+  .header__list {
+    display: grid;
+    grid-template-columns: 144px 1fr;
+    grid-template-rows: repeat(3, 63px);
+    grid-auto-flow: column;
+  }
+  /*Конец JS для burger-а*/
+
+  .header__elephant-svg {
+    margin-top: 11px;
+/*     background-image: url("../img/elephant.png"); */
+    background-image: url("https://images.cdn1.stockunlimited.net/clipart/elephant_1958755.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+  /*** // Шапка header-999px***/
+}
+
+
+@media (max-width: 747px) {/*747px*/
+  .container {
+    padding: 0 36px;
+  }
+  
+  /***Шапка header-747px***/
+  .header__item-about:not(:last-child) {
+    margin-right: 15px;
+  }
+  
+  .header__link-about {
+    display: block;
+    line-height: 19px;
+  }
+  /*** // Шапка header-747px***/
+}
+
+@media (max-width: 580px) {/*580px*/
+  .container {
+    padding: 0 13px;
+  }
+
+  /***Шапка header-580px***/
+  .header__block-menu {
+/*     top: 132px; В кодепене не нужен*/
+    display: inline-block;
+    width: 121%;    
+  }
+
+  .header__nav {
+    margin-left: 61px;
+  }
+  
+  .header__list {
+    grid-template-columns: 250px;
+    grid-template-rows: repeat(6, 62px);
+  }
+
+  .header__link {
+    display: block;
+    padding: 11px 10px;
+  }
+
+  .header__elephant-svg {
+    display: none;
+  }
+
+  .header__list2 {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    margin-left: -4px;
+    padding: 16px 4px;
+    width: 100%;
+    background-color: var(--color-wildSand);    
+  }
+
+  .header__block-burger {
+    margin-right: auto;
+  }
+  /*** // Шапка header-580px***/
+  
+}
+
+@media (max-width: 480px) {
+  /***Шапка header-480px***/
+  .header__block-burger {
+    margin-left: -5px;
+  }  
+  /*** // Шапка header-480px***/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
